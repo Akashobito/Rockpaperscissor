@@ -35,8 +35,9 @@
       div button {
         padding: 20px 20px;
         border-radius: 100px;
-        background-color: rgb(61, 58, 58);
+        background-color: transparent;
         border: 2px solid white;
+        cursor: pointer;
       }
       .result-button {
         color: white;
@@ -56,34 +57,38 @@
         <button onclick=" 
           playGame('Rock');
           ">
-          <img src="rock-emoji.png" alt="rock-img">
+          <img src="Rock-emoji.png" alt="rock-img">
         </button>
 
         <button onclick=" 
           playGame('Paper');
         ">
-          <img src="paper-emoji.png" alt="paper-img">
+          <img src="Paper-emoji.png" alt="paper-img">
         </button>
 
         <button onclick=" 
           playGame('Scissor');
         ">
-          <img src="scissors-emoji.png" alt="scissor-img">
+          <img src="Scissor-emoji.png" alt="scissor-img">
         </button>
         
       </div>
+
+         <p class="result">
+
+        </p>
+
+        <p class="moves">
+        
+        </p>
 
         <p class="score-text">
 
         </p>
 
-        <p class="moves">
+        
 
-        </p>
-
-        <p class="result">
-
-        </p>
+        
 
         <button class="result-button" onclick="
           score = {
@@ -183,7 +188,8 @@
 
       scoreButton.innerText = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.tie};`
 
-      moveElement.innerText = `You Picked ${playerMove}, Computer Picked ${computerTake}`;
+      moveElement.innerHTML = ` You <img src="${playerMove}-emoji.png"> 
+                    <img src="${computerTake}-emoji.png"> Computer`;
 
       resultElement.innerText = `${result}`;
     }
